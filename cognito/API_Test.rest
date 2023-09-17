@@ -1,0 +1,71 @@
+
+@baseUrl =  https://2gqzq27226.execute-api.us-east-1.amazonaws.com/Prod
+@authappUrl = https://gr-auth.auth.us-east-1.amazoncognito.com
+@authToken = eyJraWQiOiJHN3djbFFVZ3I2dzI4b2dwUUV5U2FOWTNFXC9na3oxXC9nTkdIOERiUFllc1U9IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiOFhWM21KRTUzYmtWTDRGcE5wVm9vZyIsInN1YiI6ImU0NzhjNDc4LTUwZjEtNzBjYS03ZTRiLTg5YjFkZDFlZWE4YyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9GUTFtVXZsOVMiLCJjb2duaXRvOnVzZXJuYW1lIjoiZTQ3OGM0NzgtNTBmMS03MGNhLTdlNGItODliMWRkMWVlYThjIiwiYXVkIjoiMWtuMTluNGRzazNwODlvZ2xlczc1Ym52NDEiLCJldmVudF9pZCI6IjQ1MWQ4NjAyLTBjMjctNDIyMS04NDU3LWY3YmFmYmVlY2QxOSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjk0OTQ3NTAyLCJleHAiOjE2OTQ5NTExMDIsImlhdCI6MTY5NDk0NzUwMiwianRpIjoiMzNkNzRhZjktYjY5MS00NjUzLTk5YjQtMjAwMGMxOGIxMTkwIiwiZW1haWwiOiJwYWdhcjk2ODUzQHRlbmpiLmNvbSJ9.sqXNIQNdDxCWAzZtciWpo6-vWoKAyqEF8mIJWJ6QkFhuXtshCx3IZ4u9suB9qfH11Hon-3vsU0CujnQVuy32_QkFdIU4DFU_kSJW6cTc7mwZ8nLX5IEDw0fDFTci0AkhjC3fFQWimqcq2rLNrcrXDgYRAakqVMiJAL51zuetiZC3GQdU2uX4MK3sFxl-CdtPY11XcLWQXBY0VXN2Y0OKVzViUp-_k-bdgg2o-xxu-VFesayXjzkiEBlKdXtLCVr7Gdc_c14NFlxDPUI-dLxG2B4Idw1cEuT7tJpNWODcrA2qYPQMjW6tY-EyB4_7wYJ724UMtcBpAxB9Tiocz4mheA
+@client_id = 1kn19n4dsk3p89ogles75bnv41
+@redirect_uri = http://localhost:4200
+
+### TEST API products
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{   
+    "TableName": "gr-products"
+}
+
+### TEST API feedback
+POST {{baseUrl}}/feedback
+Content-Type: application/json
+id_token: {{authToken}}
+
+{   
+    "TableName": "gr-feedback"
+}
+
+
+###
+PUT {{baseUrl}}feedback
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "department":"XXX",
+  "email": "YYY@ZZZ",
+  "firstName": "Giuseppe",
+  "lastName": "R.",
+  "location": "ITALY",
+  "personalid": "123-XX44"
+}
+
+
+
+### TEST API users
+GET {{baseUrl}}/gr-api/users  HTTP/1.1
+Content-Type: application/json
+Authorization: token {{authToken}}
+
+
+###
+PUT {{baseUrl}}users
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "department":"XXX",
+  "email": "YYY@ZZZ",
+  "firstName": "Giuseppe",
+  "lastName": "R.",
+  "location": "ITALY",
+  "personalid": "123-XX44"
+}
+
+
+
+### TEST Logout 
+GET {{authappUrl}}/logout?client_id={{client_id}}&logout_uri={{redirect_uri}}
+
+### TEST Login
+GET {{authappUrl}}/oauth2/authorize?client_id={{client_id}}&response_type=token&scope=email+openid&redirect_uri=https%3A%2F%2Flocalhost%3A4200
+
+
+

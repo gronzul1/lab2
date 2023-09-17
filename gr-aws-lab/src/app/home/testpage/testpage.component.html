@@ -1,0 +1,10 @@
+<div class="card">
+    <p-progressSpinner *ngIf="spinnerVisible" aria-label="Loading"></p-progressSpinner>
+    <div class="card">
+        <h4>GET api Products with authorizer</h4>
+        <ul>    
+            <li *ngFor="let el of products">{{el.ProductName}}</li>
+        </ul> 
+    </div>
+
+</div>

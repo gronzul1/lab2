@@ -1,0 +1,53 @@
+<div class="card surface-300 p-2">
+  <h1>Architecting a website using the Serverless Technology.</h1>
+  Course-end Project 2
+  
+  <h4>Description</h4>
+  <p>
+    Use the serverless technology to build up a feedback website. In the
+    ‘serverless’ way of doing things, we don’t need to think about servers.
+    Because, the capacity planning, scaling, high availability, and fault
+    tolerance — typically expected of a server — are automatically managed by
+    Cloud provider. In this case, we will consider AWS (cloud provider). AWS
+    offers a plethora of services that follow the serverless model, including but
+    not limited to SNS, SQS, Lambda, and SES. One can use these services just by
+    subscribing to them and without actually contacting the server. This
+    eliminates the need to split your attention to ensure all systems are updated
+    and maintained, allowing you to spend more time on the core operations of your
+    business.
+  </p>
+  <p>
+    Often, companies take feedback from their customers. A book publishing
+    company, for instance, takes the feedback on the newly published book. A
+    cosmetic company takes feedback, on the newly launched cosmetic product. So,
+    after collecting the customer feedback, companies tend to aggregate them all
+    to comprehend the most common issues with the product, and accordingly tweak
+    the product and the marketing strategy designed for the product.
+  </p>
+  
+  <p>
+    Until now, taking the feedback required creating an EC2 instance, RDS
+    Database, etc. But, in this use case, we will use the `serverless`
+    technologies to build up a feedback website. The services to be used and their
+    purpose are listed below:
+  </p>
+  
+  <ul>
+    <li>S3 – For storing the web pages</li>
+    <li>DynamoDB – For storing the feedback results</li>
+    <li>Cognito – To provide the website access to the backend database</li>
+    <li>IAM – To specify what permissions to be given</li>
+  </ul>
+  
+  <p><strong>AWS Services:</strong> S3, Cognito, IAM, DynamoDB</p>
+  
+  <p>
+    <strong>Expected Deliverables: </strong>
+  </p>
+  
+  <ul>
+    <li>Use Serverless technology to create a feedback form</li>
+    <li>Store the results in DynamoDB for further analysis</li>
+  </ul>
+
+</div>

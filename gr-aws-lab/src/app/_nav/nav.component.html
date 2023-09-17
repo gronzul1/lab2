@@ -1,0 +1,29 @@
+<p-menubar [model]="mnu_items">
+  <ng-template pTemplate="start">
+    <!-- src="https://primefaces.org/cdn/primeng/images/primeng.svg" -->
+    <img src="../../assets/images/geko.png" height="40" class="mr-2" />
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div *ngIf="loginVisible">
+      <i class="pi pi-sign-in"></i> <a href="{{ linkLogin }}">Login</a>
+    </div>
+    <div *ngIf="!loginVisible">
+      <i class="pi pi-sign-out"></i>
+      <a href="{{ linkLogout }}" (click)="Logout()">Logout</a>
+    </div>
+  </ng-template>
+
+  <!-- <div class="card">
+    <div class="flex align-items-center">
+      <p-splitButton
+        styleClass="p-button-text p-button-secondary"
+        routerLink="/"
+      >
+        <ng-template pTemplate="content">
+          <span class="data-letters">XY</span>
+          <span class="ml-2 flex align-items-center font-bold">XXX YYY</span>
+        </ng-template>
+      </p-splitButton>
+    </div>
+  </div> -->
+</p-menubar>

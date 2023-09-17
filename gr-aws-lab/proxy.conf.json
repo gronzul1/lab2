@@ -1,0 +1,9 @@
+{
+    "/Prod/*": {
+      "target": "https://pjt6gg3j1k.execute-api.us-east-1.amazonaws.com/",
+      "secure": false,      
+      "changeOrigin": true
+    }
+  }
+  
+  
