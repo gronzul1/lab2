@@ -24,3 +24,6 @@ Until now, taking the feedback required creating an EC2 instance, RDS Database, 
 
 - Use Serverless technology to create a feedback form
 - Store the results in DynamoDB for further analysis
+
+## Project schema
+![alt](./gr-aws-lab/src/assets/images/schema_lab2.drawio.png)
