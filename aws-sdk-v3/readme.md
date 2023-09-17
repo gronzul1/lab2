@@ -16,3 +16,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-proxy.html
 
 set HTTP_PROXY=http://mikbitprx1.internal.vodafone.com:8080
 set HTTPS_PROXY=http://mikbitprx1.internal.vodafone.com:8080
+
+
+## Copy data from local to S3
+aws s3 cp  s3://gr-feedback-bucket/  /

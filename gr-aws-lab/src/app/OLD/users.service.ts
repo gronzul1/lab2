@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AppsettingsService } from '../_services/appsettings.service';
 
 let API_URL = "";
 const httpOptions = {
@@ -13,8 +14,8 @@ const httpOptions = {
 })
 export class UsersService {
 
-  constructor(private http: HttpClient) {     
-    API_URL = "https://tcgq84nwjf.execute-api.us-east-1.amazonaws.com/Prod";
+  constructor(private http: HttpClient,private fxCfg: AppsettingsService  ) {     
+    API_URL = this.fxCfg.settings.ApiGateway.API_URL;
   }
 
   getAllUsers(): Observable<any> {

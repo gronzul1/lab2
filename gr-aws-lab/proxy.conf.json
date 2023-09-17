@@ -1,6 +1,6 @@
 {
     "/Prod/*": {
-      "target": "https://pjt6gg3j1k.execute-api.us-east-1.amazonaws.com/",
+      "target": "https://2gqzq27226.execute-api.us-east-1.amazonaws.com/",
       "secure": false,      
       "changeOrigin": true
     }

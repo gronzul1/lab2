@@ -1,6 +1,6 @@
 {
   "ApiGateway": {
-    "API_URL": "https://pjt6gg3j1k.execute-api.us-east-1.amazonaws.com/Prod",
+    "API_URL": "https://2gqzq27226.execute-api.us-east-1.amazonaws.com/Prod",
     "feedback_res": "/feedback",
     "products_res": "/products"
   },
@@ -9,8 +9,8 @@
     "feedbackTable": "gr-feedback"
   },
   "cognito": {
-    "user_pool_id": "us-east-1_rLgLFeEeH",
-    "clientId": "4f9aqr565citu124qffdq8j7v3",
+    "user_pool_id": "us-east-1_FQ1mUvl9S",
+    "clientId": "1kn19n4dsk3p89ogles75bnv41",
     "appurl": "https://gr-auth.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=4f9aqr565citu124qffdq8j7v3&response_type=token&scope=email+openid&redirect_uri=http%3A%2F%2Flocalhost%3A4200",
     "logouturl":"https://gr-auth.auth.us-east-1.amazoncognito.com/logout?client_id=4f9aqr565citu124qffdq8j7v3&logout_uri=http://localhost:4200"
   }

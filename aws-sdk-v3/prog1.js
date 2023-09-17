@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.assignS3Policy = exports.enableWebSite = exports.allowPublic = exports.createS3 = exports.deleteS3 = exports.listS3 = exports.insertProductsFile = exports.insertUsersFile = exports.MakeFeedbackTable = exports.MakeProductTable = exports.createFeedbackTable = exports.createProductTable = exports.ListTables = exports.attachRolePolicy = exports.deleteRole = exports.createRole = void 0;
+exports.copyWebSite = exports.assignS3Policy = exports.enableWebSite = exports.allowPublic = exports.createS3 = exports.deleteS3 = exports.listS3 = exports.insertProductsFile = exports.insertUsersFile = exports.MakeFeedbackTable = exports.MakeProductTable = exports.createFeedbackTable = exports.createProductTable = exports.ListTables = exports.attachRolePolicy = exports.deleteRole = exports.createRole = void 0;
 const client_dynamodb_1 = require("@aws-sdk/client-dynamodb");
 const client_iam_1 = require("@aws-sdk/client-iam");
 const client_s3_1 = require("@aws-sdk/client-s3"); // ES Modules import
@@ -383,6 +383,19 @@ function creaS3() {
 //       const response = await lmbd.send(command);
 // }
 //#endregion
+//#region fx S3 Copy Site
+const copyWebSite = async () => {
+    const input = {
+        "Bucket": BucketName,
+        "CopySource": "../gr-aws-lab/dist/*",
+        "Key": "CopyWeb"
+    };
+    const command = new client_s3_1.CopyObjectCommand(input);
+    const response = await s3.send(command);
+    console.log(response);
+};
+exports.copyWebSite = copyWebSite;
+//#endregion
 function DoSequence(step) {
     switch (step) {
         case '1':
@@ -509,8 +522,6 @@ function DoSequence(step) {
     }
 }
 var a = process.argv;
-DoSequence(a[2]);
-// DoSequence("1");
-// DoSequence("2");
-// DoSequence("3");
+// DoSequence(a[2]);
+(0, exports.copyWebSite)();
 //# sourceMappingURL=prog1.js.map

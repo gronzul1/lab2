@@ -1,6 +1,6 @@
 import { CreateTableCommand, DeleteTableCommand, DescribeTableCommand, DynamoDB, ListTablesCommand, PutItemCommand } from "@aws-sdk/client-dynamodb";
 import { AttachRolePolicyCommand, CreateRoleCommand, DeleteRoleCommand, IAMClient } from "@aws-sdk/client-iam";
-import { S3Client, CreateBucketCommand, PutBucketPolicyCommand, PutBucketWebsiteCommand, ListBucketsCommand, DeleteBucketCommand, DeletePublicAccessBlockCommand } from "@aws-sdk/client-s3"; // ES Modules import
+import { S3Client, CreateBucketCommand, PutBucketPolicyCommand, PutBucketWebsiteCommand, ListBucketsCommand, DeleteBucketCommand, DeletePublicAccessBlockCommand, CopyObjectCommand } from "@aws-sdk/client-s3"; // ES Modules import
 import { LambdaClient } from "@aws-sdk/client-lambda";
 import * as fs from "fs";
 import * as path from "path";
@@ -408,6 +408,18 @@ function creaS3() {
 
 //#endregion
 
+//#region fx S3 Copy Site
+export const copyWebSite = async () => {
+    const input = {
+        "Bucket": BucketName,
+        "CopySource": "../gr-aws-lab/dist/*",
+        "Key":"CopyWeb"
+      };
+      const command = new CopyObjectCommand(input);
+      const response = await s3.send(command);
+      console.log(response);
+}
+//#endregion
 
 function DoSequence(step) {
     switch (step) {
@@ -539,12 +551,8 @@ function DoSequence(step) {
 }
 
 var a = process.argv;
-DoSequence(a[2]);
+// DoSequence(a[2]);
 
-// DoSequence("1");
-// DoSequence("2");
-// DoSequence("3");
-
-
+copyWebSite();
 
 
