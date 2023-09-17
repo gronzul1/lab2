@@ -22,9 +22,9 @@ export class AuthInterceptor implements HttpInterceptor {
       setHeaders:
       {
         'id_token': idToken,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }
-    });
+    });    
 
     return next.handle(req).pipe(tap((event: any) => {
       if (event instanceof HttpResponse) {

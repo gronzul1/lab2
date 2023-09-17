@@ -11,7 +11,8 @@
   "cognito": {
     "user_pool_id": "us-east-1_FQ1mUvl9S",
     "clientId": "1kn19n4dsk3p89ogles75bnv41",
-    "appurl": "https://gr-auth.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=4f9aqr565citu124qffdq8j7v3&response_type=token&scope=email+openid&redirect_uri=http%3A%2F%2Flocalhost%3A4200",
-    "logouturl":"https://gr-auth.auth.us-east-1.amazoncognito.com/logout?client_id=4f9aqr565citu124qffdq8j7v3&logout_uri=http://localhost:4200"
+    "redirect_uri":"https://dvobrjknedwre.cloudfront.net/prodfbk",
+    "appurl": "https://gr-auth.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=1kn19n4dsk3p89ogles75bnv41&response_type=token&scope=email+openid&redirect_uri=https://dvobrjknedwre.cloudfront.net/prodfbk",
+    "logouturl":"https://gr-auth.auth.us-east-1.amazoncognito.com/logout?client_id=1kn19n4dsk3p89ogles75bnv41&&redirect_uri=https://dvobrjknedwre.cloudfront.net/prodfbk"
   }
 }
