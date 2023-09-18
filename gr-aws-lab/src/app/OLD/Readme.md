@@ -1,31 +1,3 @@
-# GrAwsLab
-
-
-    Progettazione di un sito Web utilizzando la tecnologia serverless.
-    Progetto di fine corso 2
-    Descrizione
-
-    Usa la tecnologia serverless per creare un sito Web di feedback.
-
-    Descrizione:
-
-    Nel modo "serverless" di fare le cose, non abbiamo bisogno di pensare ai server. Perché la pianificazione della capacità, la scalabilità, l'alta disponibilità e la tolleranza di errore, in genere previste da un server, vengono gestite automaticamente dal provider cloud. In questo caso, prenderemo in considerazione AWS (provider cloud). AWS offre una pletora di servizi che seguono il modello serverless, inclusi, a titolo esemplificativo, SNS, SQS, Lambda e SES. È possibile utilizzare questi servizi semplicemente abbonandosi a loro e senza effettivamente contattare il server. Ciò elimina la necessità di suddividere l'attenzione per garantire che tutti i sistemi siano aggiornati e mantenuti, consentendo di dedicare più tempo alle operazioni principali della propria attività.
-
-    Spesso, le aziende ricevono feedback dai loro clienti. Una casa editrice di libri, ad esempio, prende il feedback sul libro appena pubblicato. Un'azienda cosmetica riceve feedback sul prodotto cosmetico appena lanciato. Quindi, dopo aver raccolto il feedback dei clienti, le aziende tendono ad aggregarli tutti per comprendere i problemi più comuni con il prodotto e di conseguenza modificare il prodotto e la strategia di marketing progettata per il prodotto.
-
-    Fino ad ora, la raccolta del feedback richiedeva la creazione di un'istanza EC2, RDS Database, ecc. Ma, in questo caso d'uso, useremo le tecnologie "serverless" per creare un sito Web di feedback. I servizi da utilizzare e il loro scopo sono elencati di seguito:
-
-    S3 – Per la memorizzazione delle pagine web
-    DynamoDB – Per memorizzare i risultati del feedback
-    Cognito – Per fornire al sito web l'accesso al database backend
-    IAM – Per specificare quali autorizzazioni concedere
-    Servizi AWS: S3, Cognito, IAM, DynamoDB
-
-    Risultati attesi:
-
-    Utilizzare la tecnologia serverless per creare un modulo di feedback
-    Archivia i risultati in DynamoDB per ulteriori analisi
-
 
 
 ## Creazione IAM role 
